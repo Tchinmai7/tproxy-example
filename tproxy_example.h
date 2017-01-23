@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <sys/queue.h>
 
-#define TPROXY_PORT "9876"
+#define TPROXY_PORT "443"
 #define BACKLOG 10
 #define MAX_EPOLL_EVENTS BACKLOG
 #define IP_TRANSPARENT 19 //So that application compiles on OpenWRT

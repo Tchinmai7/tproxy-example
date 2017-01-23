@@ -1,3 +1,7 @@
+This project is cloned from https://github.com/kristrev/tproxy-example.
+I've modified the code to make it work as a simplified load balancer.
+The explanation contains content from the original repo, with few modifications
+
 tproxy-example
 ==============
 
@@ -12,8 +16,11 @@ decided to create a small example showing how TPROXY can be used to proxy TCP
 connections. 
 
 The example transparent proxy application accepts TCP connections on the
-specified port (set to 9876 in tproxy\_test.h) and attempts a TCP connection to
-the original host. If it is successful, the application starts forwarding data
+specified port (set to 443 (to act as an ssl loadbalancer) in tproxy\_example.h).
+it attempts a TCP connection the origin specified as the SERVER in tproxy\_example\_conn.h
+If it fails, it will atttempt to make a TCP connection the origin specified as BACKUP.
+
+If it is successful, the application starts forwarding data
 between the two connections (using splice()). The application supports multiple
 simultaneous connections and handles connections which fail (at least the
 scenarios I have tested).
@@ -39,3 +46,7 @@ with a large number of connections.
 
 Ideas, suggestion and fixes are more than welcome. I hope you find this
 example useful!
+
+
+
+
